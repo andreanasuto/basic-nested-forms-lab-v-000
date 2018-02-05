@@ -4,7 +4,7 @@ class Recipe < ActiveRecord::Base
 
   def ingredients_attributes=(ingredients)
     self.ingredients = Ingredient.find_or_create_by(title: recipe.title)
-    self.recipe.update(recipe)
+    self.ingredients.update(recipe)
   end
 
 end
