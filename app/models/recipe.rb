@@ -3,7 +3,7 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :ingredients
 
   def ingredients_attributes=(recipe)
-    self.recipe = Recipe.find_or_create_by(title: recipe.title)
+    self.ingredients = Recipe.find_or_create_by(title: recipe.title)
     self.recipe.update(recipe)
   end
 
